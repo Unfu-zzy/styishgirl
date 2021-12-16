@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color:black;
+    width:100%;
+    height:100vh;
+    font-style:san-serif;
+    position:relative;
+
+}
+
+.button{
+    Font-size:40px;
+    font-weight:bold;
+    text-align: center;
+    line-height:100px;
+    position:relative;
+    width:100%;
+    height:100%;
+    color:white;
+    text-shadow:black;
+    border-radius:solid 1px white;
+    transition-duration:.05s;
+    box-shadow:black;
+    overflow:hidden;
+    z-index:1;
+    background-color:red;
+
+}
+
+.button-container{
+    width:500px;
+    height:100px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    color:white;
+    text-shadow:black;
+    transform: translate(-50%, -50%);
+}
+
+.button:before{
+    position:absolute;
+    content:" ";
+    width: 100%;
+    height: 100%;
+    top:0;
+    transform: skew(20deg);
+    z-index:1;
+    left:-110%;
+    background-color:red;
+    transition-duration:0.5s;
+}
+
+.button:after{
+    position:absolute;
+    content:" ";
+    width: 100%;
+    height: 100%;
+    top:0;
+    transform: skew(20deg);
+    z-index:1;
+    right:-110%;
+    background-color:teal;
+    transition-duration:0.5s;
+}
+
+.button:hover::before{
+    left:-49%;
+}
+
+.button:hover::after{
+    right:-50%;
+}
+</style>
+<body>
+    <div class="button-container">
+        <div class="button">
+            click me
+        </div>
+
+    </div>
+</body>
+</html>
